@@ -1,4 +1,9 @@
 
 .recruiterSection{
  display: flex;
+ gap: 4rem;
+}
+.btn_container{
+  display: flex;
+  gap: 1.5rem;
 }
