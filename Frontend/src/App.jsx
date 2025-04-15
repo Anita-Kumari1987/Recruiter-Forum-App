@@ -93,10 +93,7 @@ function App() {
     }
   };
   return (
-    <main
-      className="relative w-full h-full min-h-screen overflow-hidden"
-      role="main"
-    >
+    <>
       <video
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
         autoPlay
@@ -122,35 +119,40 @@ function App() {
             </h1>
           </div>
         </header>
-        <div className="flex flex-col md:flex-row justify-center gap-8 max-w-7xl mx-auto recruiterSection">
-          <section
-            className="bg-white bg-opacity-90 p-6 rounded-lg shadow-md w-full md:w-1/2"
-            role="region"
-            aria-labelledby="job-form-heading"
-          >
-            <FormHeading />
-            <JobListingForm
-              handleChange={handleChange}
-              handleSubmit={handleSubmit}
-              formData={formData}
-              resetForm={resetForm}
-            />
-          </section>
-          <section
-            className="bg-white bg-opacity-90 p-6 rounded-lg shadow-md w-full md:w-1/2"
-            role="region"
-            aria-labelledby="job-form-heading"
-          >
-            <MyJobListingsList
-              jobLists={jobLists}
-              fetchJobs={fetchJobs}
-              setFormData={setFormData}
-            />
-          </section>
-        </div>
+        <main
+          className="relative w-full h-full min-h-screen overflow-hidden"
+          role="main"
+        >
+          <div className="flex flex-col md:flex-row justify-center gap-8 max-w-7xl mx-auto recruiterSection">
+            <section
+              className="bg-white bg-opacity-90 p-6 rounded-lg shadow-md w-full md:w-1/2"
+              role="region"
+              aria-labelledby="job-form-heading"
+            >
+              <FormHeading />
+              <JobListingForm
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                formData={formData}
+                resetForm={resetForm}
+              />
+            </section>
+            <section
+              className="bg-white bg-opacity-90 p-6 rounded-lg shadow-md w-full md:w-1/2"
+              role="region"
+              aria-labelledby="job-form-heading"
+            >
+              <MyJobListingsList
+                jobLists={jobLists}
+                fetchJobs={fetchJobs}
+                setFormData={setFormData}
+              />
+            </section>
+          </div>
+        </main>
         <ToastContainer role="alert" aria-live="assertive" />
       </div>
-    </main>
+    </>
   );
 }
 
